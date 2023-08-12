@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 1em 0 1em;
+  font-family: sans-serif;
+}
+p,ul,ol {
+  margin-bottom: 2em;
+  color: #1d1d1d;
+  font-family: sans-serif;
+}
+
+.codigo {
+	background-color: black;
+	color: white;
+	padding: 5px;
+	font-family: monospace;
+	position: relative;
+}
+
+.codigo::after {
+	content: "Copiar";
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: #fff;
+	background-color: #333;
+	padding: 2px 5px;
+	font-size: 12px;
+	cursor: pointer;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la página</title>
+</head>
+
+<script>
+    function copiarCodigo(controlId) {
+        var codigo = document.getElementById(controlId);
+        var rango = document.createRange();
+        rango.selectNode(codigo);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(rango);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    }
+</script>
+<body>
+    <header>
+        <h2>CRUD para las migraciones</h2>
+    </header> 
+    <main>
+		<p>Crear nueva migracion<button onclick="copiarCodigo('add')">📋</button></p>
+		<code id="add" class="codigo">
+			Add-Migration customer -context ClientesDbContext 
+		</code>
+		<p>Actualizar la base de datos <button onclick="copiarCodigo('update')">📋</button></p>
+		<code id="update" class="codigo">
+			update-database -migration customer -context ClientesDbContext
+		</code>
+		<p>Eliminar ultima migracion sin afectar base de datos <button onclick="copiarCodigo('delete1')">📋</button></p>
+		<code id="delete1" class="codigo">
+			Remove-Migration -context ClientesDbContext 
+		</code>
+		<p>Eliminar ultima migracion sin afectar base de datos <button onclick="copiarCodigo('delete2')">📋</button></p>
+		<code id="delete2" class="codigo">
+			Remove-Migration -Force -context ClientesDbContext 
+		</code>
+    </main>
+    <footer>
+        <!-- Pie de página -->
+        <p>Derechos de autor &copy; 2023 - SoftwarePYME</p>
+    </footer>
+</body>
+</html>
