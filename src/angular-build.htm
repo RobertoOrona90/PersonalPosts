@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-<style>
-html {
-  max-width: 70ch;
-  padding: 3em 1em;
-  margin: auto;
-  line-height: 1.75;
-  font-size: 1.25em;
-}
-h1,h2,h3,h4,h5,h6 {
-  margin: 1em 0 1em;
-  font-family: sans-serif;
-}
-p,ul,ol {
-  margin-bottom: 2em;
-  color: #1d1d1d;
-  font-family: sans-serif;
-}
-</style>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compilacion de Angular</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compilacion de Angular</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <script src="options.js"></script>
 </head>
- 
+
 <body>
-    <header>
-        <h2>Hosting Optimization</h2>
-    </header> 
-    <main>
-		<p>
-			ng build --configuration=qa
-		</p>
-    </main>
-    <footer>
-        <!-- Pie de página -->
-    </footer>
+  <header>
+    <h2>Compilacion de Angular</h2>
+  </header>
+  <main>
+    <p>Compilar en Angular<button onclick="copyCode('migration')">📋</button></p>
+    <code id="migration" class="code">
+      ng build --configuration=qa
+		</code>
+  </main>
+  <footer>
+    <!-- Pie de página -->
+  </footer>
 </body>
+
 </html>
