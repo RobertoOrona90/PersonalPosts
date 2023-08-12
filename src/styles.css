@@ -2,7 +2,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   border: 0;
   padding: 0;
@@ -15,7 +16,27 @@ main {
   padding: 20px;
 }
 
-main > h1 {
+main>h1 {
   text-align: center;
   font-size: 3.5em;
+}
+
+.codigo {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  font-family: monospace;
+  position: relative;
+}
+
+.codigo::after {
+  content: "Copiar";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #fff;
+  background-color: #333;
+  padding: 2px 5px;
+  font-size: 12px;
+  cursor: pointer;
 }
