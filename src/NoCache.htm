@@ -14,16 +14,23 @@
     <h2>No cache Angular</h2>
   </header>
   <main>
-    <p>Puedes poner estas etiquetas en el head del archivo index.html despues de hacer el build, para que el navegador no guarde la cache:</p>
+    <p>You can configure caching options of cli in angular.json file. One of options is cache which gives you the option of disabling it</p>
     <p>
-      &lt;meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /&gt;<br>
-      &lt;meta http-equiv="Pragma" content="no-cache" /&gt;<br>
-      &lt;meta http-equiv="Expires" content="0" /&gt;<br>
+      <code class="code">
+        {
+          "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+          "version": 1,
+          "cli": {
+            "cache": {
+              "enabled": false
+            }
+          },
+          "projects": {}
+        }
+      </code>
     </p>
     <p> Refers Links:
-      https://es.stackoverflow.com/questions/407764/evitar-cach%C3%A9-del-navegador-en-angular
-      <br>
-      https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Cache-Control
+      https://stackoverflow.com/questions/69953135/clear-angular-cache-in-angular-folder
     </p>
   </main>
   <footer>

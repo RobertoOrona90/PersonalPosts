@@ -31,3 +31,12 @@ ol {
 	font-family: monospace;
 	position: relative;
 }
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.posts {
+	padding-left: 5%
+}
