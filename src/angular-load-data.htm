@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular carga de datos</title>
+  <link href="blog-style.css" rel="stylesheet" type="text/css" />
+  <script src="options.js"></script>
+</head>
+
+<body>
+  <header>
+    <h2>Angular carga de datos</h2>
+  </header>
+  <main>
+    <p>Angular ofrece varias mejores prácticas para cargar información de manera eficiente en una aplicación. El uso de resolvers es una de ellas, pero hay otros enfoques que también son útiles dependiendo de la situación. Aquí tienes algunas recomendaciones:</p>
+    <p>      
+	  1. Usar Resolvers: Los resolvers son una excelente manera de cargar datos antes de que una ruta se active. Esto asegura que los datos estén disponibles antes de que se renderice el componente asociado a la ruta. Esto es particularmente útil cuando se necesita cargar datos críticos antes de mostrar una vista.
+	  Es decir; primero cargar los datos minimos que se requiere para entrar a la página.
+	  Si se pone un loading, el usuario se desconcerta si dura mas de un minuto, y puede pensar que no funciona correctamente.
+    </p>
+    <p> 
+	2. Lazy Loading: Utiliza el enfoque de Lazy Loading para cargar módulos y componentes solo cuando son necesarios. Esto reduce el tiempo de carga inicial de la aplicación y mejora el rendimiento.
+    </p>
+    <p> 
+	3. Paginación y Carga Incremental: Si trabajas con grandes conjuntos de datos, considera implementar paginación y cargar datos de manera incremental a medida que el usuario se desplaza por la lista. Esto disminuirá la cantidad de datos que se deben cargar de una sola vez.	
+    </p>
+    <p> 
+	4. Servicios de Estado Global: Usa servicios de estado global (como NgRx) para almacenar datos compartidos en la aplicación y compartirlos entre componentes. Esto evita la duplicación de solicitudes HTTP innecesarias.
+    </p>
+    <p> 
+	5. Pruebas de Rendimiento: Realiza pruebas de rendimiento periódicas para identificar cuellos de botella y áreas de mejora en la carga de datos, en Developer Tools en el navegador puedes ver cuanto tarda y pesa cada peticion htttp
+    </p>
+    <p> 
+	6. Time out : Incrementar el time out desde el backend.
+    </p>
+  </main>
+  <footer>
+    <!-- Pie de página -->
+  </footer>
+</body>
+
+</html>
