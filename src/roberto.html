@@ -27,8 +27,21 @@
             justify-content: space-evenly
         }
 
+        /* For devices: */
+        @media only screen and (max-width: 600px) {
+            img {
+                width: 120px;
+            }
+        }
+
+        /* For desktop: */
+        @media only screen and (min-width: 768px) {
+            img {
+                width: 250px;
+            }
+        }
+
         img {
-            width: 250px;
             border: 2px solid rgb(1, 190, 148);
             border-radius: 8px;
         }
